@@ -105,12 +105,7 @@ public class MoneyTransferAPI {
      * Stop the REST API server and reset all internal state
      */
     public static void stop(){
-        if (sparkService!=null) {
-			sparkService.stop();
-			try{
-				Thread.sleep(100);
-			} catch (Throwable e) {}
-		}
+        if (sparkService!=null)	sparkService.stop();
         sparkService = null;
         engine.reset();
     }

@@ -20,6 +20,11 @@ public class RestApiUnitTest {
     @After
     public void stopServer(){
         MoneyTransferAPI.stop();
+		try{
+				Thread.sleep(100);
+		} catch (Throwable e) {
+			e.printStackTrace();
+		}
     }
 
     @Test
