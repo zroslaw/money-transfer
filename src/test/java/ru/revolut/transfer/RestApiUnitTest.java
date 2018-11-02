@@ -21,7 +21,9 @@ public class RestApiUnitTest {
     public void stopServer(){
         MoneyTransferAPI.stop();
 		try{
-				Thread.sleep(100);
+			// Wait a bit to be sure server resources have been released
+			// Otherwise in quick test we could enocunter "Address already in use"
+			Thread.sleep(100);
 		} catch (Throwable e) {
 			e.printStackTrace();
 		}
