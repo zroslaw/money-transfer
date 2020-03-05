@@ -5,9 +5,7 @@ pipeline {
     }
     stages {
         stage('Build') {
-            steps {
-                echo 'Building'x
-            }
+            echo 'Building'
             if (env.BRANCH_NAME == 'master') {
                 echo 'I only execute on the master branch'
             } else {
